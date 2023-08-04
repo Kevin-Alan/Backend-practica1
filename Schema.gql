@@ -1,0 +1,50 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""user"""
+type User {
+  id: ID!
+  name: String!
+  lastname: String!
+  email: String!
+  password: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  HelloWorld: String!
+  GetUsers(Mostrar_update: String!): [User!]!
+  GetUserByld(Id: UserId!): [User!]!
+}
+
+input UserId {
+  _id: ID
+}
+
+type Mutation {
+  createuser(input: userInput!): User!
+  updateuser(update: userUpdate!): User!
+  deleteUser(ID: UserId!): User!
+}
+
+input userInput {
+  name: String!
+  lastname: String!
+  email: String!
+  password: String!
+}
+
+input userUpdate {
+  id: ID!
+  name: String!
+  lastname: String!
+  email: String!
+  password: String!
+}
